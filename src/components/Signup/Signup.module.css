@@ -1,0 +1,116 @@
+.SignupPage {
+    position: absolute;
+    left: 125px;
+    top: 85px;
+    height: 750px;
+    width: 800px;
+}
+
+.SignUph1 {
+    color: black;
+    font-weight: 400;
+}
+
+.SignUpinput {
+    border: 2px solid white;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+}
+
+.SignUpinput:focus {
+    width: 250px;
+    border-color: #54f284;
+}
+
+.SignUpBtn {
+    border: 2px solid #54f284;;
+    background: none;
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 140px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.SignUpBtn:hover{
+    background: #54f284;
+}
+
+.SignUpBtn:focus-within{
+    outline: none;
+}
+
+.BackToLogin{ 
+    border: 2px solid #f26c54;;
+    background: none;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    padding: 14px 10px;
+    width: 125px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.BackToLogin:hover {
+    background: #f26c54;
+}
+
+.SignupPage Popover {
+    background: #54f284
+}
+
+.userpopper {
+    background: rgb(216, 227, 228);
+    width: 200px;
+    border-radius: 10px;
+    position: relative;
+    left: 15px;
+}
+
+.userpopper h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.userpopper ul {
+    margin: 0;
+    padding: 20px;
+}
+
+.passpopper {
+    background: rgb(216, 227, 228);
+    width: 200px;
+    border-radius: 10px;
+    position: relative;
+    left: 15px;
+}
+
+.passpopper h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.passpopper ul {
+    margin: 0;
+    padding: 20px;
+}

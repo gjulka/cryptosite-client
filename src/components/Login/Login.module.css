@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+@media (max-width: 1024px) {
+    .LoginPage {
+        height: 100%;
+        width: 100%;
+        max-height: 350px;
+        max-width: 400px;
+    }
+    
+}
+
+.LoginPage {
+    position: absolute;
+    left: 125px;
+    top: 85px;
+    height: 100%;
+    width: 100%;
+    max-height: 750px;
+    max-width: 800px;
+}
+
+.LoginPage h1 {
+    margin: 0;
+}
+
+.Login {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    padding: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #95A5A6;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.LoginTitle {
+    color: black;
+    font-weight: 400;
+}
+
+.LoginInput {
+    border: 2px solid white;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+}
+
+.LoginInput:focus {
+    width: 250px;
+    border-color: #54f284;
+}
+
+.LoginLink {
+    border: 2px solid #54f284;;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    padding: 14px 10px;
+    width: 210px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.LoginLink:hover {
+    background: #2ecc71
+}
+
+.Signup {
+    border: 2px solid #f27954;;
+    background: none;
+    display: inline-block;
+    text-align: center;
+    padding: 14px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 140px;
+    outline: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Signup:hover{
+    background: #f26c54
+}

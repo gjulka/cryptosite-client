@@ -1,0 +1,37 @@
+.sidebar {
+    float: left;
+    width: 100px;
+    height: 100vh;
+    background: #95A5A6;
+    overflow: hidden;
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 350px;
+}
+
+.sidebar ul li {
+    list-style: none;
+}
+
+.sidebarLink {
+    text-decoration: none;
+    color: white;
+    height: 80px;
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    display: block;
+    line-height: 80px;
+    transition: all 0.6s;
+}
+
+.sidebarLink:hover {
+    background: #cbd5da
+}
+
+.sidebarLink:active {
+    color: #b2bec3
+}
