@@ -8,8 +8,8 @@ import cx from 'classnames'
 import classes from './Dashboard.module.css';
 
 const cryptoInfo = []
-// const API_URL = 'https://cryptoserverx.herokuapp.com/userscoins'
-const API_URL = 'http://localhost:5000/userscoins'
+const API_URL = 'https://yourcryptoserver.herokuapp.com/userscoins'
+// const API_URL = 'http://localhost:5000/userscoins'
 
 
 class Dashboard extends Component {

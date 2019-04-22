@@ -7,8 +7,8 @@ export function getCoinsRequest() {
 }
 
 export function getUserRequest() {
-    // const url = 'https://cryptoserverx.herokuapp.com/'
-    const url = 'http://localhost:5000'
+    const url = 'https://yourcryptoserver.herokuapp.com/'
+    // const url = 'http://localhost:5000'
 
     const get = axios.get(url, {
         headers: {
@@ -20,8 +20,8 @@ export function getUserRequest() {
 }
 
 export function getUsersCoinsRequest() {
-    // const url = 'https://cryptoserverx.herokuapp.com/userscoins'
-    const url = 'http://localhost:5000/userscoins'
+    const url = 'https://yourcryptoserver.herokuapp.com/userscoins'
+    // const url = 'http://localhost:5000/userscoins'
     const get = axios.get(url, {
         headers: {
             authorization: 'Bearer ' + localStorage.token 

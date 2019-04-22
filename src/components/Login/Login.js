@@ -13,8 +13,8 @@ const schema = Joi.object().keys({
     password: Joi.string().min(8).required().trim()
 });
 
-// const apiUrl = 'https://cryptoserverx.herokuapp.com/auth/login'
-const apiUrl = 'http://localhost:5000/auth/login'
+const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/login'
+// const apiUrl = 'http://localhost:5000/auth/login'
 
 class Login extends Component {
     constructor(props) {

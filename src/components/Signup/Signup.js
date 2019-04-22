@@ -13,8 +13,8 @@ const schema = Joi.object().keys({
     confirmedPassword: Joi.string().min(8).required().trim()
 });
 
-// const apiUrl = 'https://cryptoserverx.herokuapp.com/auth/signup'
-const apiUrl = 'http://localhost:5000/auth/signup'
+const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/signup'
+// const apiUrl = 'http://localhost:5000/auth/signup'
 
 
 class SignUp extends Component {
