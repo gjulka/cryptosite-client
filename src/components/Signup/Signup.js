@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Joi from 'joi'
 import { Popover } from 'reactstrap'
-import Axios from 'axios';
 import { Link, Redirect } from 'react-router-dom'
+import { signUpUserRequest } from '../../api/api'
 
 import loader from '../../assets/loader.svg'
 import classes from './Signup.module.css'
@@ -12,10 +12,6 @@ const schema = Joi.object().keys({
     password: Joi.string().min(8).required().trim(),
     confirmedPassword: Joi.string().min(8).required().trim()
 });
-
-const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/signup'
-// const apiUrl = 'http://localhost:5000/auth/signup'
-
 
 class SignUp extends Component {
     constructor(props) {
@@ -85,20 +81,16 @@ class SignUp extends Component {
             this.setState({
                 signingUp: true
             })  
-            Axios(apiUrl, {
-                method: 'post',
-                data: JSON.stringify(body),
-                headers: {
-                    'content-type': 'application/json'
-                }
-            }).then(res => {
+            signUpUserRequest(body)
+            .then(res => {
                 localStorage.token = res.data.token
                 setTimeout(() => {
                     this.setState({
                         signingUp:false
                     })
                 }, 1000);
-            }).catch(err => {
+            })
+            .catch(err => {
                 setTimeout(() => {
                     this.setState({
                         errorMessage: 'Username already exists.',
@@ -118,7 +110,6 @@ class SignUp extends Component {
         }
         const result = Joi.validate(this.state.user, schema)
         if (result.error === null) {
-            //valid
             return true
         } 
 

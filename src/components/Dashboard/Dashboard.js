@@ -1,16 +1,12 @@
 import React, {Component} from 'react'
-import Axios from 'axios';
 import Select from 'react-select'
-import { getUserRequest, getCoinsRequest, getUsersCoinsRequest } from '../../api/api';
+import { getUserRequest, getCoinsRequest, getUsersCoinsRequest, postUsersCoinsRequest } from '../../api/api';
 import YourCoins from './MyCoins/MyCoins'
 
 import cx from 'classnames'
 import classes from './Dashboard.module.css';
 
 const cryptoInfo = []
-const API_URL = 'https://yourcryptoserver.herokuapp.com/userscoins'
-// const API_URL = 'http://localhost:5000/userscoins'
-
 
 class Dashboard extends Component {
     constructor(props) {
@@ -65,15 +61,17 @@ class Dashboard extends Component {
             })
     }
 
-    componentDidUpdate() {
-        getUsersCoinsRequest()
-        .then(res => {
-            this.setState({
-                yourCoins: res.data.coins,
-                totals: res.data.allTotal,
-                percent: res.data.percents
+    componentDidUpdate(prevState) {
+        if(this.state.yourCoins !== prevState.yourCoins) {
+            getUsersCoinsRequest()
+            .then(res => {
+                this.setState({
+                    yourCoins: res.data.coins,
+                    totals: res.data.allTotal,
+                    percent: res.data.percents
+                })
             })
-        })
+        }
     }
 
     logOut() {
@@ -121,14 +119,7 @@ class Dashboard extends Component {
             percent: this.state.newCoin.percent24
         }
 
-        Axios(API_URL, {
-            method: 'post',
-            data: JSON.stringify(body),
-            headers: {
-                'content-type': 'application/json',
-                authorization: `Bearer ${localStorage.token}`
-            }
-        })
+        postUsersCoinsRequest(body)
         .then(coin => {
             this.setState({
                 newCoin: {

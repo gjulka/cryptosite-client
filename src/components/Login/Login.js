@@ -1,20 +1,15 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import Joi from 'joi'
-import Axios from 'axios'
+import { loginUserRequest } from '../../api/api'
 
 import classes from './Login.module.css'
 import loader from '../../assets/loader.svg'
-
-
 
 const schema = Joi.object().keys({
     username: Joi.string().regex(/(^[a-zA-Z0-9_]+$)/).min(2).max(30).required(),
     password: Joi.string().min(8).required().trim()
 });
-
-const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/login'
-// const apiUrl = 'http://localhost:5000/auth/login'
 
 class Login extends Component {
     constructor(props) {
@@ -67,13 +62,8 @@ class Login extends Component {
                 loggingIn: true
             })  
 
-            Axios(apiUrl, {
-                method: 'post',
-                data: JSON.stringify(body),
-                headers: {
-                    'content-type': 'application/json'
-                }
-            }).then(result => {
+            loginUserRequest(body)
+            .then(result => {
                 localStorage.token = result.data.token;
                 setTimeout(() => {
                     this.setState({
@@ -81,7 +71,8 @@ class Login extends Component {
                         loggedIn: true
                     })
                 }, 1000);
-            }).catch(err => {
+            })
+            .catch(err => {
                 setTimeout(() => {
                     this.setState({
                         errorMessage: 'Unable to login.',
@@ -95,7 +86,6 @@ class Login extends Component {
     validUser() {
         const result = Joi.validate(this.state.user, schema)
         if (result.error === null) {
-            //valid
             return true
         } 
 
