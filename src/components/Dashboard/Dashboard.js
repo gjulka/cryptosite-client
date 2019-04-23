@@ -180,10 +180,12 @@ class Dashboard extends Component {
         return(
             <div className={classes.DashContainer}>
                 <div className={classes.Dash}>
-                    <h1>Welcome, {this.state.username}</h1>
-                    <button className={classes.Logout} onClick={this.logOut}>Logout</button>
-                    <h2>Total: ${this.state.totals}</h2>
-                    <h2>Percent Change (24 Hr): <span style={percentTotal}>{this.state.percent}%</span></h2>
+                    <div className={classes.Stats}>
+                        <h1>Welcome, {this.state.username}</h1>
+                        <button className={classes.Logout} onClick={this.logOut}>Logout</button>
+                        <h2>Total: ${this.state.totals}</h2>
+                        <h2>Percent Change (24 Hr): <span style={percentTotal}>{this.state.percent}%</span></h2>
+                    </div>
                     <div className={classes.BuyCoin}>
                         <div style={amountError}>
                             <h6 style={amountError}>Amount Error. Try Again.</h6>

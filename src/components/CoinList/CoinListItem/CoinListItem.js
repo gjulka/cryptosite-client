@@ -36,9 +36,9 @@ const CoinListItem = (props) => {
     return (
         <div>
             <li className={classes.tableRow}>
-                <div style={{width: '5%', textAlign: 'center'}}></div>
-                <div style={{width: '25%', textAlign: 'center', fontWeight: '900'}}>{props.coin}-({props.sym})</div>
-                <div style={{width: '15%', textAlign: 'center'}}>${props.mcap}</div>
+                <div className={classes.refreshButtonDiv}></div>
+                <div className={classes.coinDiv} style={{width: '25%', textAlign: 'center', fontWeight: '900'}}>{props.coin}-({props.sym})</div>
+                <div className={classes.mcapDiv}>${props.mcap}</div>
                 <div className={classes.priceDiv}>${props.price}</div>
                 <div style={percent1Style} className={classes.oneHourDiv}>{props.onehour}%</div>
                 <div style={percent24Style} className={classes.oneDayDiv}>{props.oneday}%</div>

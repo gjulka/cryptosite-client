@@ -11,6 +11,7 @@
 
 .Dash {
     border-radius: 5px;
+    top: 5px;
     padding: 10px;
     background-color: #d7dddb;
     position: absolute;
@@ -98,4 +99,48 @@
 
 .AddCoinBTN:active {
     outline: none;
+}
+
+
+@media screen and (max-width: 1440px) {
+    .DashContainer {
+        height: 100%;
+        max-height: 700px;
+        position: absolute;
+        left: 100px;
+        width: 100%;
+        max-width: 45%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .Dash {
+        border-radius: 5px;
+        top: 5px;
+        padding: 10px;
+        background-color: #d7dddb;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        max-height: 250px;
+        max-width: 625px;
+    }
+    
+    .CoinsContainer {
+        position: absolute;
+        top: 265px;
+        max-width: 800px;
+        width: 100%;
+        max-height: 600px;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .Stats h1{
+        font-size: 25px;
+    }
+
+    .Stats h2{
+        font-size: 20px;
+    }
 }

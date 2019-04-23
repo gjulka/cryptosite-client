@@ -4,16 +4,6 @@ body {
     font-family: sans-serif;
 }
 
-@media (max-width: 1024px) {
-    .LoginPage {
-        height: 100%;
-        width: 100%;
-        max-height: 350px;
-        max-width: 400px;
-    }
-    
-}
-
 .LoginPage {
     position: absolute;
     left: 125px;
@@ -104,4 +94,18 @@ body {
 
 .Signup:hover{
     background: #f26c54
+}
+
+
+@media screen and (max-width: 1440px) {
+    .LoginPage {
+        position: absolute;
+        left: 125px;
+        top: 85px;
+        height: 100%;
+        width: 100%;
+        max-height: 750px;
+        max-width: 550px;
+    }
+    
 }

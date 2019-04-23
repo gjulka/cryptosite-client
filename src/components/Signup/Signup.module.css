@@ -114,3 +114,16 @@
     margin: 0;
     padding: 20px;
 }
+
+
+@media screen and (max-width: 1440px) {
+    .SignupPage {
+        position: absolute;
+        left: 125px;
+        top: 85px;
+        height: 100%;
+        width: 100%;
+        max-height: 750px;
+        max-width: 550px;
+    }
+}

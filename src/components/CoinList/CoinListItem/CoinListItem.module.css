@@ -5,7 +5,45 @@
     align-items: center;
 }
 
+.refreshButtonDiv{
+    width: 5%;
+}
+.coinDiv {
+    width: '25%';
+    text-align: center;
+    font-weight: 900;
+}
+
+.mcapDiv {
+    width: 15%;
+}
+
 .priceDiv {
     width: 13.5%;
     text-align: center;
+}
+
+
+@media screen and (max-width: 1440px) {
+    .refreshButtonDiv{
+        width: 0;
+    }
+
+    .coinDiv {
+        width: '25%';
+        text-align: center;
+        font-weight: 900;
+    }
+    
+    .mcapDiv {
+        width: 20%;
+        text-align: center;
+    }
+    
+    .priceDiv {
+        width: 13.5%;
+        text-align: center;
+        position: relative;
+        left: 10px;
+    }
 }
