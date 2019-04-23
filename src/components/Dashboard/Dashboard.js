@@ -199,8 +199,8 @@ class Dashboard extends Component {
                                 placeholder = "Start typing..."
                                 onChange={this.handleSelectedChange}
                             />
-                            <input name="price" type="text" placeholder="Price" value={this.state.newCoin.price} onChange={this.handleInputChange}/>
-                            <input name="amount" type="text" placeholder="Amount"  value={this.state.newCoin.amount} onChange={this.handleInputChange}/>
+                            <input className={classes.BuyCoininput} name="price" type="text" placeholder="Price" value={this.state.newCoin.price} onChange={this.handleInputChange}/>
+                            <input className={classes.BuyCoininput} name="amount" type="text" placeholder="Amount"  value={this.state.newCoin.amount} onChange={this.handleInputChange}/>
                             <button onClick={this.buyCoin} className={cx(classes.btnA,classes.AddCoinBTN)}>BUY</button>
                         </form>
                     </div>
