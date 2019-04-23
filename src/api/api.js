@@ -7,7 +7,7 @@ export function getCoinsRequest() {
 }
 
 export function getUserRequest() {
-    const url = 'http://localhost:5000/'
+    const url = 'https://yourcryptoserver.herokuapp.com/'
 
     const get = axios.get(url, {
         headers: {
@@ -19,7 +19,7 @@ export function getUserRequest() {
 }
 
 export function getUsersCoinsRequest() {
-    const url = 'http://localhost:5000/userscoins'
+    const url = 'https://yourcryptoserver.herokuapp.com/userscoins'
     const get = axios.get(url, {
         headers: {
             authorization: 'Bearer ' + localStorage.token 
@@ -30,7 +30,7 @@ export function getUsersCoinsRequest() {
 }
 
 export function signUpUserRequest(body) {
-    const apiUrl = 'http://localhost:5000/auth/signup'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/signup'
 
     const post = axios(apiUrl, {
         method: 'post',
@@ -44,7 +44,7 @@ export function signUpUserRequest(body) {
 }
 
 export function loginUserRequest(body) {
-    const apiUrl = 'http://localhost:5000/auth/login'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/login'
 
     const post = axios(apiUrl, {
         method: 'post',
@@ -58,7 +58,7 @@ export function loginUserRequest(body) {
 }
 
 export function postUsersCoinsRequest(body) {
-    const apiUrl = 'http://localhost:5000/userscoins'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/userscoins'
     const post = axios(apiUrl, {
         method: 'post',
         data: JSON.stringify(body),
@@ -72,7 +72,7 @@ export function postUsersCoinsRequest(body) {
 }
 
 export function postDeleteUsersCoinsRequest(body) {
-    const apiUrl = 'http://localhost:5000/userscoins/delete'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/userscoins/delete'
     const post = axios(apiUrl, {
         method: 'post',
         data: JSON.stringify(body),
