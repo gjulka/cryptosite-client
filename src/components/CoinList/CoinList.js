@@ -101,7 +101,7 @@ class CoinList extends Component {
                         <div className={classes.col5}>24 Hr</div>
                         <div className={classes.col6}>7 Days</div>
                     </li>
-                    <div className={classes.coinsbody}>
+                    <div className={classes.coinsbody} id="coinsbody">
                         {cryptoInfo.map(coin => {
                             return <CoinListItem 
                                 coin={coin.name}

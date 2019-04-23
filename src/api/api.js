@@ -70,3 +70,17 @@ export function postUsersCoinsRequest(body) {
 
     return post
 }
+
+export function postDeleteUsersCoinsRequest(body) {
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/userscoins/delete'
+    const post = axios(apiUrl, {
+        method: 'post',
+        data: JSON.stringify(body),
+        headers: {
+            'content-type': 'application/json',
+            authorization: `Bearer ${localStorage.token}`
+        }
+    })
+
+    return post
+}

@@ -207,7 +207,8 @@ class Dashboard extends Component {
 
                     {this.state.yourCoins.map(coins => {
                        return <YourCoins
-                        key={coins._id} 
+                        key={coins._id}
+                        coinID={coins._id} 
                         name={coins.name} 
                         price={coins.price}
                         amount={coins.amount}

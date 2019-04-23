@@ -1,9 +1,19 @@
 import React from 'react'
 import classes from './MyCoins.module.css';
 import cx from 'classnames'
+import { postDeleteUsersCoinsRequest } from '../../../api/api'
 
 
 const YourCoin = (props) => {
+
+    function sellCoin() {
+        const body = {
+            ID: props.coinID
+        }
+
+        postDeleteUsersCoinsRequest(body)
+    }
+
     return (
         <div className={classes.column}>
             <div className={classes.card}>
@@ -16,7 +26,7 @@ const YourCoin = (props) => {
                     <h4>Amount: {props.amount}</h4>
                     <h4 style={{marginBottom: 15, marginTop: '0'}}>Total: ${props.total}</h4>
                 </div>
-                <button className={cx(classes.btnB,classes.SellCoinBTN)}>SELL</button>
+                <button className={cx(classes.btnB,classes.SellCoinBTN)} onClick={sellCoin}>SELL</button>
             </div>
         </div>
     )
