@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import CoinListItem from './CoinListItem/CoinListItem'
 import classes from './CoinList.module.css';
 import loader from '../../assets/loader.svg';
 import { getCoinsRequest } from '../../api/api';
@@ -83,63 +84,6 @@ class CoinList extends Component {
             loadingError.display = 'block'
         }
 
-        var row = document.querySelector('#coinsbody')
-        
-        this.state.data.forEach((coin) => {
-            const coinRow = document.createElement('li')
-            coinRow.className = `${classes.tableRow}`
-
-            const buyCoin = document.createElement('div')
-            buyCoin.style.width = '5%'
-            coinRow.append(buyCoin)
-            
-            const coinName = document.createElement('div')
-            coinName.textContent = `${coin.name} - (${coin.symbol})`
-            coinName.style.width = '25%'
-            coinRow.append(coinName)
-
-            const coinMCap = document.createElement('div')
-            coinMCap.textContent = `$${coin.marketCap}`
-            coinMCap.style.width = '15%'
-            coinRow.append(coinMCap)
-
-            const coinPrice = document.createElement('div')
-            coinPrice.textContent = `$${coin.price}`
-            coinPrice.style.width = '13.5%'
-            coinRow.append(coinPrice)
-
-            const coinChange1 = document.createElement('div')
-            coinChange1.textContent = `${coin.percentChange1Hr}%`
-            coinChange1.style.width = '15%'
-                if((coin.percentChange1Hr).includes('-')){
-                    coinChange1.style.color = 'red'
-                } else {
-                    coinChange1.style.color = 'green'
-                }
-            coinRow.append(coinChange1)
-                
-            const coinChange24 = document.createElement('div')
-            coinChange24.textContent = `${coin.percentChange24Hr}%`
-            coinChange24.style.width = '11%'
-                if((coin.percentChange24Hr).includes('-')){
-                    coinChange24.style.color = 'red'
-                } else {
-                    coinChange24.style.color = 'green'
-                }
-            coinRow.append(coinChange24)
-
-            const coinChange7 = document.createElement('div')
-            coinChange7.textContent = `${coin.percentChange7Days}%`
-            coinChange7.style.width = '15%'
-                if((coin.percentChange7Days).includes('-')){
-                    coinChange7.style.color = 'red'
-                } else {
-                    coinChange7.style.color = 'green'
-                }
-            coinRow.append(coinChange7)
-            row.append(coinRow)
-        })
-            
         return (
             <div className={classes.CoinListContainer}>
                 <h3 style={loadingError}>Network Error. Could not get data.</h3>
@@ -157,7 +101,19 @@ class CoinList extends Component {
                         <div className={classes.col5}>24 Hr</div>
                         <div className={classes.col6}>7 Days</div>
                     </li>
-                    <div className={classes.coinsbody} id="coinsbody"/>
+                    <div className={classes.coinsbody}>
+                        {cryptoInfo.map(coin => {
+                            return <CoinListItem 
+                                coin={coin.name}
+                                sym={coin.symbol}
+                                mcap={coin.marketCap}
+                                price={coin.price}
+                                onehour={coin.percentChange1Hr}
+                                oneday={coin.percentChange24Hr}
+                                sevendays={coin.percentChange7Days}
+                            />
+                        })}
+                    </div>
                 </ul>
             </div>
         )
