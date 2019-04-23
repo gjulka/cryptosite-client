@@ -10,7 +10,6 @@ const YourCoin = (props) => {
         const body = {
             ID: props.coinID
         }
-
         postDeleteUsersCoinsRequest(body)
     }
 

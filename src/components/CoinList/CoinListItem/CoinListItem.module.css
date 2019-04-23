@@ -9,27 +9,3 @@
     width: 13.5%;
     text-align: center;
 }
-
-@media (max-width: 1440px) {
-    .priceDiv {
-        width: 13.5%;
-        text-align: center;
-        position: relative;
-        left: 30px;
-    }
-
-    .oneHourDiv {
-        position: relative;
-        left: 30px;
-    }   
-
-    .oneDayDiv {
-        position: relative;
-        left: 30px;
-    }
-    
-    .sevenDayDiv {
-        position: relative;
-        left: 30px;
-    }
-}
