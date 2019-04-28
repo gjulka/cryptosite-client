@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 export function getCoinsRequest() {
     axios.defaults.baseURL = 'https://coinlist.now.sh/coins';
     
@@ -25,7 +26,6 @@ export function getUsersCoinsRequest() {
             authorization: 'Bearer ' + localStorage.token 
         }
     })
-
     return get
 }
 

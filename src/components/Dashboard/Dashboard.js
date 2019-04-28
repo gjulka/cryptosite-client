@@ -35,6 +35,7 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
+        this._isMounted = true;
         getUserRequest()
             .then(user => {
                 if (user.data.user) {
@@ -48,30 +49,37 @@ class Dashboard extends Component {
 
         getCoinsRequest()
             .then(coins => {
-                var cryptoData = coins.data.data
-                var x
-                for (x in cryptoData) {
-                    cryptoInfo.push({
-                        value: cryptoData[x].name,
-                        label: cryptoData[x].name,
-                        symbol: cryptoData[x].symbol,
-                        price: (Number(Math.round(cryptoData[x].quote.USD.price + 'e2') + 'e-2').toLocaleString('en')),
-                        percentChange24Hr: Number(cryptoData[x].quote.USD.percent_change_24h).toFixed(2)
-                })}
-            })
+                if(this._isMounted) {
+                    var cryptoData = coins.data.data
+                    var x
+                    for (x in cryptoData) {
+                        cryptoInfo.push({
+                            value: cryptoData[x].name,
+                            label: cryptoData[x].name,
+                            symbol: cryptoData[x].symbol,
+                            price: (Number(Math.round(cryptoData[x].quote.USD.price + 'e2') + 'e-2').toLocaleString('en')),
+                            percentChange24Hr: Number(cryptoData[x].quote.USD.percent_change_24h).toFixed(2)
+                    })
+                    }
+                }
+            }) 
     }
 
-    componentDidUpdate(prevState) {
-        if(this.state.yourCoins !== prevState.yourCoins) {
-            getUsersCoinsRequest()
-            .then(res => {
+    componentDidUpdate(){
+        getUsersCoinsRequest()
+        .then(res => {
+            if(this._isMounted) {
                 this.setState({
                     yourCoins: res.data.coins,
                     totals: res.data.allTotal,
                     percent: res.data.percents
                 })
-            })
-        }
+            }
+        })
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     logOut() {
@@ -134,7 +142,6 @@ class Dashboard extends Component {
                 amountError: true
             })
         })
-
     }
 
     render(){
@@ -151,6 +158,8 @@ class Dashboard extends Component {
                 })
         }
 
+       
+
         const amountError = {
             position: 'absolute',
             margin: 0,
@@ -165,7 +174,6 @@ class Dashboard extends Component {
         const percentTotal = {
             color: 'green'
         }
-
        
         if (this.state.percent.includes('-')) {
             percentTotal.color = 'red'

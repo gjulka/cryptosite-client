@@ -42,18 +42,28 @@
     flex-basis: 25%;
 }
 .col2 {
-    flex-basis: 14%;
-}
-.col3 {
-    flex-basis: 13.5%;
-}
-.col4 {
+    position: relative;
+    right: 10px;
     flex-basis: 15%;
 }
-.col5 {
+.col3 {
+    position: relative;
+    left: 10px;
+    flex-basis: 10%;
+}
+.col4 {
+    position: relative;
+    left: 40px;
     flex-basis: 11%;
 }
+.col5 {
+    position: relative;
+    left: 45px;
+    flex-basis: 14%;
+}
 .col6 {
+    position: relative;
+    left: 30px;
     flex-basis: 14%;
 }
 
@@ -79,18 +89,28 @@
         flex-basis: 25%;
     }
     .col2 {
+        position: relative;
+        left: 0px;
         flex-basis: 20%;
     }
     .col3 {
+        position: relative;
+        left: 0px;
         flex-basis: 15%;
     }
     .col4 {
+        position: relative;
+        left: 0px;
         flex-basis: 11%;
     }
     .col5 {
+        position: relative;
+        left: 0px;
         flex-basis: 15%;
     }
     .col6 {
+        position: relative;
+        left: 0px;
         flex-basis: 12%;
     }
 

@@ -11,14 +11,72 @@
 
 .User {
     border-radius: 5px;
-    top: 5px;
+    top: 250px;
     padding: 10px;
     background-color: #d7dddb;
     position: absolute;
     height: 100%;
     width: 100%;
-    max-height: 850px;
+    max-height: 350px;
     max-width: 800px;
+}
+
+.Username {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.Username h3 {
+    position: relative;
+    left: 5px;
+}
+
+.Username button {
+    position: relative;
+    left: 10px;
+    height: 25px;
+    border: 0;
+    background: none;
+    outline: none;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.Username img {
+    height: 15px;
+    width: 15px;
+}
+
+.Password {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.Password h3 {
+    position: relative;
+    left: 5px;
+}
+
+.Password button {
+    position: relative;
+    left: 10px;
+    height: 25px;
+    border: 0;
+    background: none;
+    outline: none;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.Password img {
+    height: 15px;
+    width: 15px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -31,7 +89,7 @@
         top: 5px;
         height: 100%;
         width: 100%;
-        max-height: 850px;
+        max-height: 350px;
         max-width: 800px;
     }
     

@@ -55,6 +55,23 @@ body {
     border-color: #54f284;
 }
 
+.LoginInput:focus::placeholder {
+    opacity: 0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 0.75; /* Firefox */
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
 .LoginLink {
     border: 2px solid #54f284;;
     background: none;
