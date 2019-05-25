@@ -8,8 +8,8 @@ export function getCoinsRequest() {
 }
 
 export function getUserRequest() {
-    // const url = 'https://yourcryptoserver.herokuapp.com/'
-    const apiUrl = 'http://localhost:5000/'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/'
+    // const apiUrl = 'http://localhost:5000/'
 
     const get = axios.get(apiUrl, {
         headers: {
@@ -21,8 +21,8 @@ export function getUserRequest() {
 }
 
 export function getUsersCoinsRequest() {
-    // const url = 'https://yourcryptoserver.herokuapp.com/userscoins'
-    const apiUrl = 'http://localhost:5000/userscoins'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/userscoins'
+    // const apiUrl = 'http://localhost:5000/userscoins'
 
     const get = axios.get(apiUrl, {
         headers: {
@@ -33,8 +33,8 @@ export function getUsersCoinsRequest() {
 }
 
 export function signUpUserRequest(body) {
-    // const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/signup'
-    const apiUrl = 'http://localhost:5000/auth/signup'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/signup'
+    // const apiUrl = 'http://localhost:5000/auth/signup'
 
 
     const post = axios(apiUrl, {
@@ -49,8 +49,8 @@ export function signUpUserRequest(body) {
 }
 
 export function loginUserRequest(body) {
-    // const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/login'
-    const apiUrl = 'http://localhost:5000/auth/login'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/login'
+    // const apiUrl = 'http://localhost:5000/auth/login'
 
 
     const post = axios(apiUrl, {
@@ -65,8 +65,8 @@ export function loginUserRequest(body) {
 }
 
 export function updateUserRequest(body) {
-    // const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/login'
-    const apiUrl = 'http://localhost:5000/auth/update'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/auth/login'
+    // const apiUrl = 'http://localhost:5000/auth/update'
 
 
     const post = axios(apiUrl, {
@@ -82,8 +82,8 @@ export function updateUserRequest(body) {
 }
 
 export function postUsersCoinsRequest(body) {
-    // const apiUrl = 'https://yourcryptoserver.herokuapp.com/userscoins'
-    const apiUrl = 'http://localhost:5000/userscoins'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/userscoins'
+    // const apiUrl = 'http://localhost:5000/userscoins'
 
     const post = axios(apiUrl, {
         method: 'post',
@@ -98,8 +98,8 @@ export function postUsersCoinsRequest(body) {
 }
 
 export function postDeleteUsersCoinsRequest(body) {
-    // const apiUrl = 'https://yourcryptoserver.herokuapp.com/userscoins/delete'
-    const apiUrl = 'http://localhost:5000/userscoins/delete'
+    const apiUrl = 'https://yourcryptoserver.herokuapp.com/userscoins/delete'
+    // const apiUrl = 'http://localhost:5000/userscoins/delete'
 
     const post = axios(apiUrl, {
         method: 'post',

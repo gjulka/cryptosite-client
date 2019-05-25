@@ -23,7 +23,7 @@ const YourCoin = (props) => {
                 <div className={classes.cardInfo}>
                     <h4>Buy Price: ${props.price}</h4>
                     <h4>Current Price: ${props.currPrice}</h4>
-                    <h4>Percent Change: {props.perChange}%</h4>
+                    <h4>Percent Change: <span style={props.percentStyle}>{props.perChange}%</span></h4>
                     <h4>Amount: {props.amount}</h4>
                     <h4 style={{marginBottom: 15, marginTop: '0'}}>Total: ${props.total}</h4>
                 </div>

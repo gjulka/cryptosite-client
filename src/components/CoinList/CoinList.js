@@ -5,6 +5,8 @@ import classes from './CoinList.module.css';
 import loader from '../../assets/loader.svg';
 import { getCoinsRequest } from '../../api/api';
 
+//(Number(Math.round(cryptoData[x].quote.USD.price + 'e2') + 'e-2').toLocaleString('en'))
+
 var cryptoInfo = [];
 
 class CoinList extends Component {
@@ -29,10 +31,16 @@ class CoinList extends Component {
             var cryptoData = res.data.data
             var x
             for (x in cryptoData) {
+                var b
+                if(cryptoData[x].quote.USD.price < 1) {
+                    b = 5
+                } else {
+                    b = 2
+                }
               cryptoInfo.push({
                   name: cryptoData[x].name,
                   symbol: cryptoData[x].symbol,
-                  price: (Number(Math.round(cryptoData[x].quote.USD.price + 'e2') + 'e-2').toLocaleString('en')),
+                  price: (cryptoData[x].quote.USD.price).toFixed(b),
                   percentChange1Hr: Number(cryptoData[x].quote.USD.percent_change_1h).toFixed(2),
                   percentChange24Hr: Number(cryptoData[x].quote.USD.percent_change_24h).toFixed(2),
                   percentChange7Days: Number(cryptoData[x].quote.USD.percent_change_7d).toFixed(2),

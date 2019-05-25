@@ -53,11 +53,17 @@ class Dashboard extends Component {
                     var cryptoData = coins.data.data
                     var x
                     for (x in cryptoData) {
+                        var b
+                        if(cryptoData[x].quote.USD.price < 1) {
+                            b = 5
+                        } else {
+                            b = 2
+                        }
                         cryptoInfo.push({
                             value: cryptoData[x].name,
                             label: cryptoData[x].name,
                             symbol: cryptoData[x].symbol,
-                            price: (Number(Math.round(cryptoData[x].quote.USD.price + 'e2') + 'e-2').toLocaleString('en')),
+                            price: (cryptoData[x].quote.USD.price).toFixed(b),
                             percentChange24Hr: Number(cryptoData[x].quote.USD.percent_change_24h).toFixed(2)
                     })
                     }
@@ -221,13 +227,21 @@ class Dashboard extends Component {
                                 var buyprice = coins.price.replace(/,/g, '')
                                 var percentChangePerCoin = ((((nowprice) - buyprice)/buyprice)*100).toFixed(2);
 
+                                const coinPercentChangeStyle = {
+                                    color: 'green'
+                                }
+                                if (percentChangePerCoin.includes('-')) {
+                                    coinPercentChangeStyle.color = 'red'
+                                }
+
                                 return <YourCoins
                                     key={coins._id}
                                     coinID={coins._id} 
                                     name={coins.name} 
                                     price={coins.price}
                                     perChange={percentChangePerCoin}
-                                    currPrice={nowprice}
+                                    currPrice={cryptoInfo[x].price}
+                                    percentStyle={coinPercentChangeStyle}
                                     amount={coins.amount}
                                     total={coins.total}
                                     symbol={coins.symbol}
