@@ -20,7 +20,6 @@ const UserContainer = () => (
         <PrivateRoute path="/user" exact component={User}/>
         <PrivateRoute path="/dashboard" exact component={Dashboard}/>
         <Route path="/signup" exact component={Signup} />
-        {/* <Route path="/guest" exact component={Guest} /> */}
     </div>
 )
 

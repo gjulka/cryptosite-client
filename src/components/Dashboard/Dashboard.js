@@ -146,19 +146,17 @@ class Dashboard extends Component {
 
     render(){
         const customStyles = {
-                menu: (base) => ({
-                    ...base,
-                    zIndex: 10,
-                    height: 120
-                }),
-                menuList: (base) => ({
-                    ...base,
-                    zIndex: 10,
-                    height: 120
-                })
+            menu: (base) => ({
+                ...base,
+                zIndex: 10,
+                height: 120
+            }),
+            menuList: (base) => ({
+                ...base,
+                zIndex: 10,
+                height: 120
+            })
         }
-
-       
 
         const amountError = {
             position: 'absolute',
@@ -184,7 +182,7 @@ class Dashboard extends Component {
         } else {
             amountError.display = 'none'
         }
-    
+
         return(
             <div className={classes.DashContainer}>
                 <div className={classes.Dash}>
@@ -216,17 +214,27 @@ class Dashboard extends Component {
                 <div id="mycoins" className={classes.CoinsContainer}>
 
                     {this.state.yourCoins.map(coins => {
-                       return <YourCoins
-                        key={coins._id}
-                        coinID={coins._id} 
-                        name={coins.name} 
-                        price={coins.price}
-                        amount={coins.amount}
-                        total={coins.total}
-                        symbol={coins.symbol}
-                        />
+                        var x 
+                        for (x in cryptoInfo){
+                            if(coins.name === cryptoInfo[x].value){
+                                var nowprice = cryptoInfo[x].price.replace(/,/g, '')
+                                var buyprice = coins.price.replace(/,/g, '')
+                                var percentChangePerCoin = ((((nowprice) - buyprice)/buyprice)*100).toFixed(2);
+
+                                return <YourCoins
+                                    key={coins._id}
+                                    coinID={coins._id} 
+                                    name={coins.name} 
+                                    price={coins.price}
+                                    perChange={percentChangePerCoin}
+                                    currPrice={nowprice}
+                                    amount={coins.amount}
+                                    total={coins.total}
+                                    symbol={coins.symbol}
+                                    />
+                            }
+                        }
                     })}
-                    
                 </div>
             </div>
         )

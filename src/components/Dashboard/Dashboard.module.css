@@ -68,6 +68,11 @@
     z-index: 100;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(102, 102, 102);
+    opacity: 1; /* Firefox */
+}
+
 
 .btnA{
     position: relative;

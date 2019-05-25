@@ -165,7 +165,6 @@ class Login extends Component {
                     <input className={classes.LoginInput} name="password" type="password" placeholder="Password" onChange={this.handleChange}/>
                     <button className={classes.LoginLink} onClick={this.login}>Login</button>
                     <Link className={classes.Signup} to="/signup">Sign Up</Link>
-                    <Link className={classes.Signup} to="/guest">Login as Guest</Link>
                 </form>
             </div>
         )
