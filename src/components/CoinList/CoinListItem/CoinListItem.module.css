@@ -5,6 +5,11 @@
     align-items: center;
 }
 
+.tableRow img {
+    height: 32px;
+    width: 32px;
+}
+
 .refreshButtonDiv{
     width: 5%;
 }

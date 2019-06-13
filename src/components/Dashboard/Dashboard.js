@@ -81,7 +81,7 @@ class Dashboard extends Component {
                     percent: res.data.percents
                 })
             }
-        })
+        }) 
     }
 
     componentWillUnmount() {

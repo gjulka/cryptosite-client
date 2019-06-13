@@ -20,11 +20,7 @@ class CoinList extends Component {
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            loading: true
-        })
-
+    apiStart() {
         getCoinsRequest()
           .then(res => {
            setTimeout(() => {
@@ -60,12 +56,22 @@ class CoinList extends Component {
         })
     }
 
+    componentDidMount() {
+        this.setState({
+            loading: true
+        })
+        this.apiStart()
+    }
+
+    
+
     topClick() {
         var row = document.querySelector('#coinsbody');
         row.scrollTop = 0;
     }
     
     render() {
+
         const loadingStyle = {
             position: 'absolute',
             left: '50%',

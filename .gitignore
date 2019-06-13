@@ -1,1 +1,4 @@
 node_modules
+/build
+/src/assets/color
+/scripts
